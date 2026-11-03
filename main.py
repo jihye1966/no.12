@@ -5,9 +5,6 @@ from grass2 import Grass2
 
 import game_world
 
-# Game object class here
-
-
 def handle_events():
     global running
 
@@ -40,7 +37,7 @@ def update_world():
 def render_world():
     clear_canvas()
     game_world.render()
-    
+
     if boy.shot_message:
         message_font.draw(20, 560, boy.shot_message, (255, 255, 255))
     update_canvas()
@@ -59,5 +56,5 @@ while running:
     update_world()
     render_world()
     delay(0.01)
-# finalization code
+
 close_canvas()
