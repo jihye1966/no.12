@@ -20,8 +20,6 @@ def handle_events():
         else:
             boy.handle_event(event)
 
-
-
 def reset_world():
     global boy
 
@@ -42,6 +40,7 @@ def update_world():
 def render_world():
     clear_canvas()
     game_world.render()
+    
     if boy.shot_message:
         message_font.draw(20, 560, boy.shot_message, (255, 255, 255))
     update_canvas()
