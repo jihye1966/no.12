@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <style>
+      .state { fill: #dbeafe; stroke: #1d4ed8; stroke-width: 3; }
+      .label { font: 700 22px sans-serif; fill: #0f172a; text-anchor: middle; }
+      .event { font: 16px sans-serif; fill: #334155; text-anchor: middle; }
+      .line { stroke: #334155; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .self { stroke: #64748b; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .title { font: 700 28px sans-serif; fill: #0f172a; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1000" height="620" fill="#f8fafc"/>
+  <text x="500" y="45" class="title">Boy State Machine</text>
+
+  <circle cx="105" cy="180" r="44" class="state"/>
+  <text x="105" y="187" class="label">IDLE</text>
+  <rect x="405" y="135" width="190" height="90" rx="45" class="state"/>
+  <text x="500" y="188" class="label">RUN</text>
+  <rect x="750" y="135" width="190" height="90" rx="45" class="state"/>
+  <text x="845" y="188" class="label">SLEEP</text>
+
+  <path d="M149 180 H403" class="line"/>
+  <text x="275" y="165" class="event">← / → 키다운</text>
+
+  <path d="M405 210 H150" class="line"/>
+  <text x="278" y="245" class="event">← / → 키업</text>
+
+  <path d="M595 180 H748" class="line"/>
+  <text x="672" y="165" class="event">IDLE 5초 경과</text>
+
+  <path d="M845 225 V315 H105 V226" class="line"/>
+  <text x="475" y="305" class="event">Space 키다운</text>
+
+  <path d="M105 224 V470 H403" class="line"/>
+  <text x="245" y="455" class="event">← / → 키다운</text>
+
+  <path d="M750 180 H650 V370 H500 V227" class="line"/>
+  <text x="665" y="355" class="event">Space: 기상</text>
+
+  <path d="M105 136 C35 75 35 285 105 224" class="self"/>
+  <text x="45" y="75" class="event">Space</text>
+  <text x="45" y="98" class="event">발사 메시지</text>
+
+  <path d="M500 135 C430 70 570 70 500 135" class="self"/>
+  <text x="500" y="78" class="event">Space</text>
+  <text x="500" y="101" class="event">발사 메시지</text>
+
+  <circle cx="105" cy="180" r="7" fill="#16a34a"/>
+  <text x="500" y="555" class="event">IDLE/RUN에서 Space: 상태 유지 · 바라보는 방향으로 공 발사 메시지 표시</text>
+</svg>
